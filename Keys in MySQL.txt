@@ -1,0 +1,90 @@
+Keys in MySQL
+=============
+Key
+====
+A column in the table/attribute of the entity which uniquely identifies other values of the entity.
+
+Example:
+=======
+voterid
+passport number
+aadhaar number/SSN number
+Pan number (IT returns)
+studentid
+employeeid
+etc.,
+
+
+Candidate Key
+=============
+A column or group of columns that can uniquely identify a row/tuple/record in the table.
+A table can contain multiple candidate keys
+
+For example:
+============
+In student table
+
+Studentid,studentname,studentemail,studentmobno,studentgrade
+
+Candidate keys in the above table
+=================================
+Studentid
+Studentemail
+Studentmobno
+
+Primary Key
+===========
+A column that can uniquely identify a row/tuple/record in the table.
+Primary Key is a Candidate key
+We can choose one candidate key as a primary key
+If a column/attribute is defined as primary key ,the values inside that column should be
+unique and not null
+
+if a column is defined as primary key,we cannot insert duplicates and null values
+
+only one primary key will be there for the table
+
+Example to define a primary key in the ER diagram
+=================================================
+
+Example to define a primary key in the table
+=============================================
+
+
+if we try to alter the table to add primary constraint if any duplicates or null values should not be there
+in the column which we want to define as primary key
+
+20:01:39	alter table student add constraint pk_student primary key(studentid)	Error Code: 1062. Duplicate entry 'S001267' for key 'student.PRIMARY'	0.031 sec
+
+
+20:04:48	alter table student add constraint pk_student primary key(studentid)	Error Code: 1138. Invalid use of NULL value	0.078 sec
+
+
+
+
+Composite Key
+==============
+Set of columns that can uniquely identify a row/tuple/record in the table.
+
+
+Course
+======
+Courseid coursestartdate coursename noofseats roomno roomcap
+===============================================================
+C101      29-11-2023      C          50        101    60
+================================================================
+C102       11-11-2023     Java       50         105    70
+================================================================
+C101     02-11-2023       C           50        101    60
+===============================================================
+C102       29-11-2023     Java       50         106   70
+================================================================
+
+
+Courseid+coursestartdate => compositekey
+
+
+
+
+Foreign Key
+
