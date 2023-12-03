@@ -1,0 +1,3 @@
+use pmd;
+
+show tables;
